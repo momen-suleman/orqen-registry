@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "name": "PII Redactor",
+    "repo": "momen-suleman/pii-redactor",
+    "description": "Redacts emails, phone numbers, and credit-card-like digit sequences from text before it's passed further down a pipeline.",
+    "category": "Security",
+    "publisher": "momen-suleman",
+    "runCommand": "docker run -p 9321:9321 $(docker build -q https://github.com/momen-suleman/pii-redactor.git)",
+    "tags": ["security", "pii", "redaction"]
+  }
+]
