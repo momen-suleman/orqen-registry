@@ -1,0 +1,86 @@
+{
+  "name": "Clean and redact",
+  "description": "Normalize whitespace, redact PII, then gate on a minimum word count.",
+  "graph": {
+    "nodes": [
+      {
+        "id": "normalize",
+        "capability": "@text-normalize",
+        "x": 340,
+        "y": 220
+      },
+      {
+        "id": "redact",
+        "capability": "@pii-redactor",
+        "x": 660,
+        "y": 220
+      },
+      {
+        "id": "stats",
+        "capability": "text.analyze",
+        "x": 980,
+        "y": 140
+      },
+      {
+        "id": "gate",
+        "capability": "text.validate",
+        "params": {
+          "minimum": 3
+        },
+        "x": 1300,
+        "y": 220
+      },
+      {
+        "id": "mentions",
+        "capability": "text.keyword",
+        "params": {
+          "keyword": "{{WATCH_TERM}}"
+        },
+        "x": 980,
+        "y": 300
+      }
+    ],
+    "edges": [
+      {
+        "from": "normalize",
+        "to": "redact"
+      },
+      {
+        "from": "redact",
+        "to": "stats"
+      },
+      {
+        "from": "redact",
+        "to": "mentions"
+      },
+      {
+        "from": "stats",
+        "to": "gate"
+      },
+      {
+        "from": "mentions",
+        "to": "gate"
+      }
+    ],
+    "layout": {
+      "trigger": {
+        "x": 60,
+        "y": 220
+      },
+      "triggerEdges": [
+        "normalize"
+      ],
+      "notes": [
+        {
+          "id": "note-starter",
+          "x": 340,
+          "y": 360,
+          "w": 300,
+          "h": 90,
+          "color": "#20313a",
+          "text": "Imported from the Orqen Starter Library. {{WATCH_TERM}} comes from the selected context."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PII Redactor",
+  "description": "Redacts emails, phone numbers and card-like digit sequences from text.",
+  "category": "Security",
+  "endpoint": "http://127.0.0.1:9321",
+  "timeoutSecs": 20
+}

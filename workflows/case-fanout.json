@@ -1,0 +1,30 @@
+{
+  "name": "Case fan-out",
+  "description": "Normalize once, then produce lowercase and uppercase variants in parallel.",
+  "graph": {
+    "nodes": [
+      {
+        "id": "normalize",
+        "capability": "@text-normalize"
+      },
+      {
+        "id": "lower",
+        "capability": "@text-lowercase"
+      },
+      {
+        "id": "upper",
+        "capability": "@text-uppercase"
+      }
+    ],
+    "edges": [
+      {
+        "from": "normalize",
+        "to": "lower"
+      },
+      {
+        "from": "normalize",
+        "to": "upper"
+      }
+    ]
+  }
+}

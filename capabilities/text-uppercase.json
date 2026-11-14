@@ -1,0 +1,7 @@
+{
+  "name": "Text Uppercase",
+  "description": "Unicode-aware uppercase transform.",
+  "category": "Transform",
+  "endpoint": "http://127.0.0.1:9332",
+  "timeoutSecs": 15
+}

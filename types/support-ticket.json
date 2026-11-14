@@ -1,0 +1,24 @@
+{
+  "name": "Support ticket",
+  "description": "Structured input for ticket-triage workflows.",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "One-line summary"
+    },
+    "body": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "integer",
+      "description": "1 (urgent) – 4 (low)"
+    },
+    "tags": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "body"
+  ]
+}

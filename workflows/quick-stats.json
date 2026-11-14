@@ -1,0 +1,8 @@
+{
+  "name": "Quick stats",
+  "description": "Built-in only: word statistics and a minimum-length gate.",
+  "stages": [
+    "text.analyze",
+    "text.validate"
+  ]
+}

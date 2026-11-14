@@ -55,3 +55,23 @@ Point an Orqen install at this repo with:
 ORQEN_REGISTRY_URL=https://raw.githubusercontent.com/momen-suleman/orqen-registry/main/index.json
 ORQEN_REGISTRY_REPO=momen-suleman/orqen-registry
 ```
+
+## Starter library
+
+Besides `index.json` (the Discover index), this repository is a complete
+**Orqen Library**. In Orqen Studio open **Library**, enter
+`momen-suleman/orqen-registry` and press **Scan → Import** to install:
+
+| Folder | Installs |
+|---|---|
+| `capabilities/` | PII Redactor, Text Normalize/Lowercase/Uppercase (docker-compose ports) |
+| `workflows/` | *Clean and redact* (fork/join graph), *Case fan-out*, *Quick stats* |
+| `missions/` | *Nightly redaction* (scheduled, disabled until you enable it) |
+| `contexts/` | *Local development* env context (`WATCH_TERM`, `REGION`, a secret placeholder) |
+| `types/` | *Support ticket* input type |
+| `skills/` | *Summarizer*, *Redaction reviewer* (use on `ai.chat` nodes) |
+
+Workflows reference capabilities with `@<slug>`, missions reference workflows
+and contexts the same way. Re-importing syncs; removing the library in Orqen
+uninstalls everything it installed. Secret context values are never stored in
+the repository — set them in Orqen after import.

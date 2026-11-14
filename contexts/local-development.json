@@ -1,0 +1,19 @@
+{
+  "name": "Local development",
+  "scope": "env",
+  "description": "Docker-compose capabilities on 127.0.0.1.",
+  "variables": [
+    {
+      "key": "WATCH_TERM",
+      "value": "Orqen"
+    },
+    {
+      "key": "REGION",
+      "value": "local"
+    },
+    {
+      "key": "SUPPORT_API_TOKEN",
+      "secret": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Nightly redaction",
+  "description": "Runs the redaction workflow once a day in the local env.",
+  "workflows": [
+    "@clean-and-redact",
+    "@quick-stats"
+  ],
+  "mode": "scheduled",
+  "scheduleEverySecs": 86400,
+  "enabled": false,
+  "env": "@local-development",
+  "defaultDocument": "Contact jane@example.com or +1 555 010 2030 about the {{WATCH_TERM}} rollout.",
+  "defaultMinimumWords": 3
+}
